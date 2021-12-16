@@ -1,0 +1,151 @@
+.newsfeed_conatiner {
+  .data {
+    padding-top: 5rem;
+    font-family: "Open Sans", sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    height: 100vh;
+    grid-column-gap: 3rem;
+    box-sizing: border-box;
+    .sidebar {
+      padding: 1rem 0;
+      display: flex;
+      flex-direction: column;
+
+      .link {
+        padding: 1rem;
+        display: flex;
+        gap: 0.5rem;
+        font-size: 1.1rem;
+        align-items: center;
+        cursor: pointer;
+        &:hover {
+        }
+      }
+      .activel {
+        background-color: rgba(0, 0, 255, 0.288);
+        border-radius: 0 2rem 2rem 0;
+        color: blue;
+      }
+      .line {
+        width: -webkit-fill-available;
+        background-color: gray;
+        height: 2px;
+        margin: 0 2rem;
+      }
+
+      @media only screen and(max-width:599px) {
+        display: none;
+      }
+    }
+
+    .feeds_box {
+      overflow-y: scroll;
+      .heading {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 1rem;
+      }
+
+      .feeds {
+        // width: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        .feed {
+          position: relative;
+          // width: 800px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1rem;
+          border: 1px solid gray;
+          border-radius: 0.5rem;
+          padding: 1rem;
+          margin-right: 3rem;
+          @media only screen and (max-width:"700px"){
+            flex-direction: column-reverse;
+            width: -webkit-fill-available;
+
+          }
+
+          .feedData {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            gap: 0.5rem;
+            .title {
+              font-weight: bold;
+            }
+            .auther {
+              font-size: small;
+              color: gray;
+              display: flex;
+              gap: 0.5rem;
+              align-items: center;
+              margin-left: 0.5rem;
+              margin-top: -0.3rem;
+            }
+            .dot {
+              height: min-content;
+              background-color: gray;
+              width: 3px;
+              height: 3px;
+              border-radius: 50rem;
+            }
+            .dec {
+              margin-left: 0.5rem;
+              font-size: 0.95rem;
+            }
+          }
+
+          .img_box {
+            img {
+              width: 100px;
+              border-radius: 0.3rem;
+            }
+          }
+
+          .fvrt {
+            position: absolute;
+            right: 10px;
+            bottom: -5px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    @media only screen and(max-width:599px) {
+      display: block;
+
+      .feeds_box {
+        .feeds {
+          margin: 0 auto;
+          .feed {
+            width: -webkit-fill-available;
+            flex-direction: column-reverse;
+            margin-right: 0rem;
+            margin: 0 1rem;
+            .feedData {
+              .title {
+                font-size: 0.8rem;
+              }
+              .dec {
+                font-size: 0.75rem;
+              }
+            }
+            .img_box {
+              width: 100%;
+              img {
+                width: -webkit-fill-available;
+                border-radius: 0.3rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
